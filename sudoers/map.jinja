@@ -13,4 +13,4 @@
                 'config-path': '/usr/local/etc',
                 'exec-prefix': '/usr/local/sbin',
                 'group': 'wheel'},
-}, merge=salt['pillar.get']('sudoers:lookup')) %}
+}, merge=salt['pillar.get']('sudoers:lookup', None)) %}
