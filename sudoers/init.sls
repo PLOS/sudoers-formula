@@ -17,6 +17,6 @@ sudo:
     - check_cmd: {{ sudoers.get('exec-prefix', '/usr/sbin') }}/visudo -c -f
     - context:
         included: False
-        plos_groups: {{ plos_groups|tojson }}
+        plos_groups: {{ plos_groups|list|tojson }}
     - require:
       - pkg: sudo
