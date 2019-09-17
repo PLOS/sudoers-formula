@@ -1,5 +1,8 @@
 {% from "sudoers/map.jinja" import sudoers with context %}
 
+# our list of plos core active directory groups
+{%- set plos_groups = salt['pillar.get']('group_map:core').keys() %}
+
 sudo:
   pkg.installed:
     - name: {{ sudoers.pkg }}
@@ -14,5 +17,6 @@ sudo:
     - check_cmd: {{ sudoers.get('exec-prefix', '/usr/sbin') }}/visudo -c -f
     - context:
         included: False
+        plos_groups: {{ plos_groups|list|tojson }}
     - require:
       - pkg: sudo
