@@ -30,11 +30,7 @@
                     'plosdev': 'ALL = (ALL:ALL) NOPASSWD: ALL',
                     'plosqa': 'ALL = (ALL:ALL) NOPASSWD: ALL'
                },
-   'prod':     {
-                    'default': 'ALL = (root) NOEXEC:NOPASSWD: SUPPORT',
-                    'plosdev': 'ALL = (ALL:ALL) NOPASSWD: ALL',
-                    'plosqa': 'ALL = (ALL:ALL) NOPASSWD: ALL'
-               }
+   'prod':     { 'default': 'ALL = (root) NOEXEC:NOPASSWD: SUPPORT' },
     },
     grain='environment',
     merge=salt['pillar.get']('group_maps:lookup', None))
