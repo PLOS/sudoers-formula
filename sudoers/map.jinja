@@ -19,6 +19,7 @@
 {% set plos_group_maps = salt['grains.filter_by']({
     'default': { 'default': 'ALL = (root) NOEXEC:NOPASSWD: SUPPORT' },
     'vagrant': { 'default': 'ALL = (ALL:ALL) NOPASSWD: ALL' },
+    'test':    { 'default': 'ALL = (ALL:ALL) NOPASSWD: ALL' },
     'dev':     { 'default': 'ALL = (ALL:ALL) NOPASSWD: ALL' },
     'qa':      {
                     'default': 'ALL = (root) NOEXEC:NOPASSWD: SUPPORT',
